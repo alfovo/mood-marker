@@ -1,5 +1,171 @@
-body {
+/* body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+} */
+
+/* =================================
+  Element Styles
+==================================== */
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  color: #4c4c4c;
+  background: #f6f5f3;
+}
+
+.App {
+  width: 100%;
+  max-width: 900px;
+  margin: 2.5em auto;
+  border-radius: .35em;
+  background: #fcfcfc;
+  overflow: hidden;
+  -webkit-box-shadow: 0 0 26px rgba(0, 0, 0, .13);
+  box-shadow: 0 0 26px rgba(0, 0, 0, .13);
+}
+
+h1,
+p {
+  color: #f9f8fd;
+}
+
+h1 {
+  font-family: 'Merienda', cursive;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, .4);
+  line-height: .65;
+  margin-top: .5em;
+  margin-bottom: 0;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 0.35em;
+}
+
+p {
+  font-size: 1.1em;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, .25);
+}
+
+header {
+  text-align: center;
+  background: #3d3d3f;
+  background-blend-mode: multiply;
+  background-size: cover;
+}
+
+.counter {
+  display: block;
+}
+
+tr {
+  color: rgba(118, 118, 118, .75);
+}
+
+td:last-child {
+  font-weight: bold;
+  font-size: 1.16em;
+  color: rgb(118, 118, 118);
+}
+/* pending */
+
+.pending {
+  border-color: rgba(210, 210, 210, .5);
+}
+
+.pending span {
+  color: rgb(210, 210, 210);
+}
+/* responded */
+
+.responded {
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+  border-color: rgba(88, 183, 205, .9);
+}
+
+.responded label {
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+  color: rgba(88, 183, 205, 1);
+}
+/* =================================
+  Media Queries
+==================================== */
+
+@media (max-width: 768px) {
+  header {
+    padding: 1.25em;
+  }
+  h1 {
+    font-size: 3.6em;
+    margin: .3em 0 0;
+  }
+
+  .wrapper {
+    margin: 0;
+  }
+  .main {
+    padding: 2em 1em .75em;
+  }
+  .counter {
+    margin-top: 1.65em;
+    padding-top: 1.5em;
+    border-top: 1px dotted rgba(0, 0, 0, .15);
+  }
+  tr {
+    display: inline-block;
+    padding: 0 12px 0 0;
+  }
+}
+
+@media (min-width: 769px) {
+  header {
+    height: 280px;
+    padding: 2.5em 1em 1em;
+    background-position: 0 -95px;
+  }
+  h1 {
+    font-size: 5.8em;
+  }
+  h2 {
+    font-size: 1.95em;
+  }
+
+  .wrapper {
+    width: 90%;
+  }
+  .main {
+    padding: 3.8em 1.5em .75em;
+    position: relative;
+    z-index: 10;
+  }
+  .counter {
+    float: right;
+    text-align: right;
+    margin-right: 1.25%;
+  }
+  td:last-child {
+    padding-left: 5px;
+  }
+  .main > div {
+    float: left;
+    margin-left: 1.25%;
+    margin-bottom: 1.5em;
+  }
+  .paper {
+    margin: 0 1.25% 1em;
+    padding: 1em;
+    background: #fff;
+    border-radius: .2em;
+    position: relative;
+  }
 }
