@@ -1,44 +1,51 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Grid from "@material-ui/core/Grid";
+import TableCell from "@material-ui/core/TableCell";
+import TableRow from "@material-ui/core/TableRow";
 import Avatar from "@material-ui/core/Avatar";
-import Paper from "@material-ui/core/Paper";
+// import Paper from "@material-ui/core/Paper";
 import DeleteIcon from "@material-ui/icons/Delete";
+import FaceIcon from "@material-ui/icons/Face";
+import MoodRoundedIcon from "@material-ui/icons/MoodRounded";
+import MoodBadRoundedIcon from "@material-ui/icons/MoodBadRounded";
+import IconButton from "@material-ui/core/IconButton";
 
-import EmotionIcon from "./EmotionIcon";
+function renderFaceIcon(icon) {
+  switch (icon) {
+    case 1:
+      return <MoodRoundedIcon />;
+    case 2:
+      return <MoodBadRoundedIcon />;
+    default:
+      return <FaceIcon />;
+  }
+}
 
 const MoodItem = props => (
-  <Grid item xs={12}>
-    <Paper className="paper">
-      <Grid container>
-        <Grid item xs={3}>
-          <Avatar>
-            <EmotionIcon isHappy={true} />
-          </Avatar>
-          {props.name}
-        </Grid>
-        <Grid item xs={3}>
-          {props.time}
-        </Grid>
-        <Grid item xs={3}>
-          {props.date}
-        </Grid>
-        <Grid item xs={3}>
-          {/* <Button variant="fab" disabled aria-label="Delete" className="input-button"> */}
-          <DeleteIcon />
-          {/* </Button> */}
-        </Grid>
-      </Grid>
-    </Paper>
-  </Grid>
+  <TableRow>
+    <TableCell>
+      <div className="row">
+        <Avatar className="avatar">{renderFaceIcon(props.icon)}</Avatar>
+        <h3 className="avatar-description">{props.name}</h3>
+      </div>
+    </TableCell>
+    <TableCell numeric>{props.time}</TableCell>
+    <TableCell numeric>{props.date}</TableCell>
+    <TableCell numeric>
+      <IconButton aria-label="Delete" onClick={props.handleRemove}>
+        <DeleteIcon />
+      </IconButton>
+    </TableCell>
+  </TableRow>
 );
 
 MoodItem.propTypes = {
   name: PropTypes.string.isRequired,
   time: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired
-  // isHappy: PropTypes.boolean.isRequired
+  date: PropTypes.string.isRequired,
+  handleRemove: PropTypes.func.isRequired,
+  icon: PropTypes.number.isRequired
 };
 
 export default MoodItem;

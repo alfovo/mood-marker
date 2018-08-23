@@ -1,9 +1,3 @@
-/* body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-} */
-
 /* =================================
   Element Styles
 ==================================== */
@@ -14,7 +8,7 @@
 }
 
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   color: #4c4c4c;
   background: #f6f5f3;
 }
@@ -23,80 +17,107 @@ body {
   width: 100%;
   max-width: 900px;
   margin: 2.5em auto;
-  border-radius: .35em;
+  border-radius: 0.35em;
   background: #fcfcfc;
   overflow: hidden;
-  -webkit-box-shadow: 0 0 26px rgba(0, 0, 0, .13);
-  box-shadow: 0 0 26px rgba(0, 0, 0, .13);
-}
-
-h1,
-p {
-  color: #f9f8fd;
+  -webkit-box-shadow: 0 0 26px rgba(0, 0, 0, 0.13);
+  box-shadow: 0 0 26px rgba(0, 0, 0, 0.13);
 }
 
 h1 {
-  font-family: 'Merienda', cursive;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, .4);
-  line-height: .65;
-  margin-top: .5em;
+  font-family: "Merienda", cursive;
+  /* text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4); */
+  line-height: 0.65;
+  margin-top: 0.5em;
   margin-bottom: 0;
+  color: #f9f8fd;
 }
 
 h2 {
   margin-top: 0;
-  margin-bottom: 0.35em;
-}
-
-p {
-  font-size: 1.1em;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, .25);
+  margin-bottom: 0;
 }
 
 header {
   text-align: center;
-  background: #3d3d3f;
+  background: #cfd8dc;
   background-blend-mode: multiply;
   background-size: cover;
 }
 
-.counter {
-  display: block;
+/* .table-header {
+  background: #3d3d3f;
+  border: none;
 }
 
-tr {
-  color: rgba(118, 118, 118, .75);
+.table-header h3 {
+  color: #f9f8fd;
+} */
+
+.row {
+  display: flex;
+  justify-content: left;
 }
 
-td:last-child {
-  font-weight: bold;
-  font-size: 1.16em;
-  color: rgb(118, 118, 118);
-}
-/* pending */
-
-.pending {
-  border-color: rgba(210, 210, 210, .5);
+.avatar {
+  margin-top: 4px;
 }
 
-.pending span {
-  color: rgb(210, 210, 210);
-}
-/* responded */
-
-.responded {
-  -webkit-transition: 0.4s;
-  -o-transition: 0.4s;
-  transition: 0.4s;
-  border-color: rgba(88, 183, 205, .9);
+.avatar-description {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 10px;
 }
 
-.responded label {
-  -webkit-transition: 0.4s;
-  -o-transition: 0.4s;
-  transition: 0.4s;
-  color: rgba(88, 183, 205, 1);
+.profile {
+  margin: 0 1.25% 1em;
+  padding: 1em;
 }
+
+.user-icon {
+  padding: 5px;
+}
+
+.table {
+  padding: 1em;
+}
+
+.form {
+  padding-top: 2.5em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.text-field {
+  flex-basis: 200px;
+}
+
+.text-field label {
+  /* color: #f9f8fd; */
+}
+
+.text-field:before {
+  border-bottom: white;
+}
+
+.form-control {
+  padding-right: 15px;
+}
+
+.button-control {
+  padding-left: 15px;
+  display: inline-flex;
+}
+
+.paper {
+  margin: 0 1.25% 1em;
+  padding: 1em;
+  background: #fff;
+  border-radius: 0.2em;
+  position: relative;
+}
+
 /* =================================
   Media Queries
 ==================================== */
@@ -107,34 +128,24 @@ td:last-child {
   }
   h1 {
     font-size: 3.6em;
-    margin: .3em 0 0;
+    margin: 0.3em 0 0;
   }
 
   .wrapper {
     margin: 0;
   }
   .main {
-    padding: 2em 1em .75em;
-  }
-  .counter {
-    margin-top: 1.65em;
-    padding-top: 1.5em;
-    border-top: 1px dotted rgba(0, 0, 0, .15);
-  }
-  tr {
-    display: inline-block;
-    padding: 0 12px 0 0;
+    padding: 2em 1em 0.75em;
   }
 }
 
 @media (min-width: 769px) {
   header {
-    height: 280px;
-    padding: 2.5em 1em 1em;
+    padding: 2.5em 1em 2em;
     background-position: 0 -95px;
   }
   h1 {
-    font-size: 5.8em;
+    font-size: 4.6em;
   }
   h2 {
     font-size: 1.95em;
@@ -144,28 +155,13 @@ td:last-child {
     width: 90%;
   }
   .main {
-    padding: 3.8em 1.5em .75em;
+    padding: 2em 2em 2.5em;
     position: relative;
     z-index: 10;
-  }
-  .counter {
-    float: right;
-    text-align: right;
-    margin-right: 1.25%;
-  }
-  td:last-child {
-    padding-left: 5px;
   }
   .main > div {
     float: left;
     margin-left: 1.25%;
     margin-bottom: 1.5em;
-  }
-  .paper {
-    margin: 0 1.25% 1em;
-    padding: 1em;
-    background: #fff;
-    border-radius: .2em;
-    position: relative;
   }
 }
